@@ -95,6 +95,10 @@ Here is an example playbook that installs a complete server
                       - rhel-7-server-rpms
                       - rhel-sap-hana-for-rhel-7-server-rpms
 
+              # If you want to use 4 years update services, use:
+              #       - rhel-7-server-e4s-rpms
+              #       - rhel-sap-hana-for-rhel-7-server-e4s-rpms
+
               # disk-init role variables
               disks:
                       /dev/vdc: vg00
@@ -147,9 +151,9 @@ Here is an example playbook that installs a complete server
               - { role: mk-ansible-roles.subscribe-rhn }
               - { role: mk-ansible-roles.disk-init }
               - { role: linux-system-roles.timesync }
-              - { role: mk-ansible-roles.preconfigure }
-              - { role: mk-ansible-roles.deployment }
-              - { role: mk-ansible-roles.hsr }
+              - { role: mk-ansible-roles.saphana-preconfigure }
+              - { role: mk-ansible-roles.saphana-deployment }
+              - { role: mk-ansible-roles.saphana-hsr }
 
 License
 -------
