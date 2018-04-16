@@ -68,7 +68,7 @@ When you unpack your installation archives like this, it is save to define hana_
 * `hana_installdir: "{{ installroot + '/' + installversion }}"`
 
 ### Further Variables to prepare the HANA deployment
-- `hostname`: system hostname, needed for internal tests for Scale-Out and SAP Host Agent, and for multihomed systems. Use `"{{ ansible_hostname }}"` as default value
+- `hostname`: system hostname, needed for internal tests for Scale-Out and SAP Host Agent, and for multihomed systems. Use `"{{ ansible_hostname }}"` as default value. It's recommended to use `host_vars/hostname` to set this file
 - `hana_pw_hostagent_ssl`: Password for SAP Host Agent
 - `id_user_sapadm`: System user ID for Linux user sapadm
 - `id_group_shm`: System Group ID for <sid>shm
