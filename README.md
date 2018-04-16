@@ -152,7 +152,7 @@ Here is an example playbook that installs a complete server
               - { role: mk-ansible-roles.disk-init }
               - { role: linux-system-roles.timesync }
               - { role: mk-ansible-roles.saphana-preconfigure }
-              - { role: mk-ansible-roles.saphana-deployment }
+              - { role: mk-ansible-roles.saphana-deploy }
               - { role: mk-ansible-roles.saphana-hsr }
 
 License
