@@ -3,11 +3,20 @@
 - name: install NFS packages for mounting
   yum: state=present name=nfs-utils
 
-- file:
+##
+# This module creates the mountpoint if it doesn't exist. As such I need to provide 
+# owner & group. This can change when something is mounted and the setup fails in a second run
+# So as a quick fix I put ignore_errors: yes, so that it can safely fail in second run.
+#  if something goes wrong in the first run it's fine, the mount will fail
+#  TODO: Create some better way to ensure the install dir
+##
+- name: Ensure Mountpoint for SAP HANA Installdirectory is available
+  file:
     name: "{{ installroot }}"
     state: directory
     owner: root
     group: root
+  ignore_errors: yes
 
 - name: mount installdir
   mount:
