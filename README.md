@@ -142,9 +142,9 @@ Here is an example playbook that installs a complete server
               hana_installdir: "{{ installroot + '/HANA2SPS02' }}"
 
               hana_pw_hostagent_ssl: "MyS3cret!"
-              id_user_sapadm: "30200"
-              id_group_shm: "30220"
-              id_group_sapsys: "30200"
+              id_user_sapadm: "20202"
+              id_group_shm: "20202"
+              id_group_sapsys: "20202"
               pw_user_sapadm_clear: "MyS3cret!"
 
       roles:
