@@ -1,8 +1,11 @@
 ---
 
 - name: install required packages
-  yum: state=latest name={{ item }}
-  with_items:
+  yum: 
+    state: latest
+    name: "{{ packages }}"
+  vars:
+    packages:
     - chrony
     - xfsprogs
     - libaio
@@ -39,18 +42,21 @@
   yum: state=latest name=@base
 
 - name: required package groups
-  yum: state=present name=@{{ item }}
-  with_items:
-    - large-systems
-    - network-file-system-client
-    - performance
-    - compat-libraries
+  yum: 
+    state: present 
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - "@large-systems"
+    - "@network-file-system-client"
+    - "@performance"
+    - "@compat-libraries"
   when: ( ansible_architecture == "x86_64" )
 
 - name: required package groups
-  yum: state=present name=@{{ item }}
-  with_items:
-    - compat-libraries
+  yum: 
+    state: present 
+    name: "compat-libraries"
   when: ( ansible_architecture == "ppc64le" )
     
 

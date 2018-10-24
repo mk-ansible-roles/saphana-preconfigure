@@ -1,8 +1,8 @@
 ---
 
-- name: Enable Debugging
-  debug:
-    verbosity: "{{ debuglevel }}"
+#- name: Enable Debugging
+#  debug:
+#    verbosity: "{{ debuglevel }}"
 # Thomas Bludau 20170508
 # Might be customized on every customer site
 # It is necessary that you have a fix repository,
