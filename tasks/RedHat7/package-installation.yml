@@ -56,7 +56,7 @@
 - name: required package groups
   yum: 
     state: present 
-    name: "compat-libraries"
+    name: "@compat-libraries"
   when: ( ansible_architecture == "ppc64le" )
     
 
