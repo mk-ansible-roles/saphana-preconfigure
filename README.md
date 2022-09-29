@@ -1,6 +1,9 @@
 saphana-preconfigure
 =====================
 
+# THIS ROLE IS DEPRECATED AND WILL BE DELETED IN 12.2022<BR>use _community.sap_install_ collection instead
+
+
 This role git@github.com:mk-ansible-roles/saphana-preconfigure.git. This role configures a RHEL 6.7 or 7.x system according to the SAP notes so that SAP HANA is installable
 
 Requirements
